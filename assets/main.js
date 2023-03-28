@@ -31,6 +31,8 @@ Consigli del giorno:
 
 */
 
-let container = document.querySelector(`.container2`)
+let array = [
+   `img/01.webp`
+]
 
-for(i=0; i)
+console.log(array)
