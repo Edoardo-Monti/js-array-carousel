@@ -32,7 +32,31 @@ Consigli del giorno:
 */
 
 let array = [
-   `img/01.webp`
+   
+   "img/01.webp",
+   "img/02.webp",
+   "img/03.webp",
+   "img/04.webp",
+   "img/05.webp"
+   
+   
 ]
 
-console.log(array)
+console.log(array[2])
+
+// console.log(array)
+for(i=0; i <= array.length - 1; i++){
+    let container = document.querySelector(`.container2`)
+    let img = document.createElement(`div`)
+
+    img.innerHTML = `${array[i]}`
+    
+
+    if(i == 0){
+        img.className = `item first active`
+    }else{
+        img.className = `item`
+    }
+
+    container.append(img)
+}
