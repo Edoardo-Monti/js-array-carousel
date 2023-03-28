@@ -33,30 +33,65 @@ Consigli del giorno:
 
 let array = [
    
-   "img/01.webp",
-   "img/02.webp",
-   "img/03.webp",
-   "img/04.webp",
-   "img/05.webp"
+   "assets/img/01.webp",
+   "assets/img/02.webp",
+   "assets/img/03.webp",
+   "assets/img/04.webp",
+   "assets/img/05.webp"
    
    
 ]
 
-console.log(array[2])
+let container = document.querySelector(`.container2`);
 
 // console.log(array)
 for(i=0; i <= array.length - 1; i++){
-    let container = document.querySelector(`.container2`)
-    let img = document.createElement(`div`)
+    // METODO MATTIA
+    let img = document.createElement(`div`);
+    img.id = 'img' + i;
+    img.classList.add("item");
+    img.innerHTML = `<img src='${array[i]}'>`
 
-    img.innerHTML = `${array[i]}`
-    
+    // let img = document.createElement(`div`)
 
-    if(i == 0){
-        img.className = `item first active`
-    }else{
-        img.className = `item`
-    }
+    // img.innerHTML = `<img src='${array[i]}''>`
+
+
+    // if(i == 0){
+    //     img.className = `item first active`
+    // }else{
+    //     img.className = `item`
+    // }
 
     container.append(img)
 }
+//METODO MATTIA
+document.getElementById('img0').classList.add("active");
+document.getElementById('img0').classList.add("first");
+document.getElementById('img4').classList.add("last")
+
+
+let prev = document.querySelector(`.prev`)
+let next = document.querySelector(`.next`)
+
+
+
+
+
+next.addEventListener(`click`, function(){
+    //seleziono la prima immagine
+    let primaImg = document.querySelector('.active')
+    console.log(primaImg)
+
+    let scorriImg = primaImg.nextElementSibling
+    console.log(scorriImg)
+
+    if(primaImg.classList.contains(`last`)){
+        scorriImg = document.querySelector(`.first`)
+    }
+
+    //tolgo la classe "active"
+    primaImg.classList.remove("active")
+    //aggingo la classe "active" all'elemento successivo
+    scorriImg.classList.add("active")
+})
