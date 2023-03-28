@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    /* border: 2px solid blue; */
+}
+
+.slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 800px;
+    height: 700px;
+}
+
+.prev, .next{
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.item.active{
+    display: block;
+}
+
+.item{
+    display: none;
+}
