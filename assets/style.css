@@ -11,6 +11,10 @@
     /* border: 2px solid blue; */
 }
 
+.container2{
+    height: 700px;
+}
+
 .slider{
     display: flex;
     justify-content: center;
@@ -18,8 +22,9 @@
 }
 
 img{
-    width: 800px;
-    height: 700px;
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit:contain;
 }
 
 .prev, .next{

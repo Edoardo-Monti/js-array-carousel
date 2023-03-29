@@ -95,3 +95,21 @@ next.addEventListener(`click`, function(){
     //aggingo la classe "active" all'elemento successivo
     scorriImg.classList.add("active")
 })
+
+prev.addEventListener(`click`, function(){
+    //seleziono la prima immagine
+    let primaImg = document.querySelector('.active')
+    console.log(primaImg)
+
+    let scorriImg = primaImg.previousElementSibling
+    console.log(scorriImg)
+
+    if(primaImg.classList.contains(`first`)){
+        scorriImg = document.querySelector(`.last`)
+    }
+
+    //tolgo la classe "active"
+    primaImg.classList.remove("active")
+    //aggingo la classe "active" all'elemento successivo
+    scorriImg.classList.add("active")
+})
